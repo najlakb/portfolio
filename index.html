@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Najla Portfolio</title>
+    <style>
+    body{
+  font-family: Arial;
+  margin: 0;
+  background: radial-gradient(circle at top, #ffffff 0%, #f4f4f4 35%, #ededed 100%);
+}
+
+.page{
+  max-width: 900px;
+  margin: auto;
+  padding: 24px;
+}
+        .card {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+       .cert-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap:16px;
+  margin-top:12px;
+}
+
+.cert-card{
+  width:100%;
+  text-align:left;
+  border: 1px solid rgba(255,255,255,0.55);
+  border-radius: 20px;
+  background: rgba(255,255,255,0.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding:16px;
+  cursor:pointer;
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  outline: none;
+}
+
+.cert-card:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 18px 45px rgba(0,0,0,0.12);
+  background: rgba(255,255,255,0.70);
+}
+
+.cert-card:focus{
+  outline: 2px solid rgba(0,0,0,0.15);
+  outline-offset: 3px;
+}
+
+.cert-card img{
+  width:92px;
+  height:92px;
+  object-fit:cover;
+  border-radius:12px;
+  border:1px solid rgba(0,0,0,0.06);
+  flex: 0 0 auto;
+}
+
+.cert-info h3{
+  margin:0 0 6px 0;
+  font-size:16px;
+}
+
+.muted{
+  margin:0;
+  color:#666;
+  font-size:13px;
+  line-height:1.35;
+}
+
+/* Modal */
+.modal{
+  position:fixed;
+  inset:0;
+  display:none;
+  z-index:9999;
+}
+
+.modal.show{ display:block; }
+
+.modal-overlay{
+  position:absolute;
+  inset:0;
+  background: rgba(0,0,0,0.5);
+}
+
+.modal-content{
+  position:relative;
+  background:#fff;
+  width:min(900px, 92vw);
+  margin: 5vh auto;
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+  max-height: 90vh;
+  overflow: auto;
+}
+
+.modal-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  padding:14px 16px;
+  border-bottom:1px solid rgba(0,0,0,0.08);
+  gap:12px;
+}
+
+.modal-body{
+  padding:16px;
+  background:#fafafa;
+}
+
+.modal-body img{
+  width:100%;
+  height:auto;
+  border-radius:12px;
+  border:1px solid rgba(0,0,0,0.08);
+  background:#fff;
+}
+
+.modal-footer{
+  display:flex;
+  gap:10px;
+  justify-content:flex-end;
+  padding:14px 16px;
+  border-top:1px solid rgba(0,0,0,0.08);
+}
+
+.btn{
+  display:inline-block;
+  padding:10px 14px;
+  border-radius:12px;
+  border:1px solid rgba(0,0,0,0.1);
+  background:#111;
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  font-size:14px;
+}
+
+.btn.ghost{
+  background:#fff;
+  color:#111;
+}
+
+.icon-btn{
+  border:0;
+  background:transparent;
+  font-size:18px;
+  cursor:pointer;
+  padding:6px 10px;
+  border-radius:10px;
+}
+
+.icon-btn:hover{
+  background: rgba(0,0,0,0.06);
+}
+   .badges{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-top:8px;
+}
+
+.badge{
+  display:inline-flex;
+  align-items:center;
+  padding:6px 10px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:600;
+  border:1px solid rgba(0,0,0,0.08);
+  background: rgba(255,255,255,0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color:#111;
+}
+
+.badge.ghost{
+  background: rgba(255,255,255,0.45);
+}
+
+   </style>
+</head>
+
+<body>
+<div class="page">
+<h1>Najla Khaled Albawardi</h1>
+
+<div class="card">
+    <h2>Profile</h2>
+    <p>Aspiring software engineer with a specialization in cybersecurity, dedicated to building secure, scalable, and high-performance solutions. Proficient in problem-solving and programming, with a strong interest in adopting emerging technologies to improve system security and reliability.</p>
+</div>
+<div class="card">
+  <h2>Education</h2>
+
+  <h3>Bachelor of Software Engineering - Cybersecurity Track</h3>
+
+  <div class="badges">
+    <span class="badge">Prince Sultan University</span>
+    <span class="badge ghost">Expected Graduation: 2027</span>
+  </div>
+</div>
+<div class="card">
+    <h2>Skills</h2>
+   <ul>
+
+  <li>
+    <strong>Programming Languages:</strong>
+    Java, C++, JavaScript
+  </li>
+
+  <li>
+    <strong>Web Technologies:</strong>
+    HTML, CSS
+  </li>
+
+  <li>
+    <strong>Databases:</strong>
+    SQL, Relational Databases
+  </li>
+
+  <li>
+    <strong>Cybersecurity:</strong>
+    Cybersecurity Fundamentals, Cryptography
+  </li>
+
+  <li>
+    <strong>Software Development:</strong>
+    Data Structures & Algorithms, Software Testing, System Design
+  </li>
+
+  <li>
+    <strong>Problem Solving:</strong>
+    Debugging, Algorithm Design, Critical Thinking
+  </li>
+
+  <li>
+    <strong>Soft Skills:</strong>
+    Team Collaboration, Time Management, Adaptability, Continuous Learning
+  </li>
+
+</ul>
+</div>
+
+<div class="card">
+    <h2>Projects</h2>
+
+    <h3>Qersh – Personal Finance Management App (IOS, Swift, Figma)</h3>
+    <ul>
+ <li>Developed an expense-tracking application that helps users manage budgets, track spending, and scan receipts with OCR.</li>
+    <li>Designed system architecture</li>
+    <li>Implemented features such as customizable budget categories real-time analytics, and financial insights.</li>
+    <li>Applied usability testing and heuristic evaluation to refine the user experience.</li>
+</ul>
+
+</div>
+
+<div class="card">
+  <h2>Certificates</h2>
+
+  <div class="cert-grid">
+
+    <!-- HTML -->
+    <button class="cert-card"
+      data-title="Introduction to HTML"
+      data-issuer="Satr Platform"
+      data-date="Feb 2026"
+      data-img="IMAGES/IMG_html.PNG"
+      data-verify="">
+      <img src="IMAGES/IMG_html.PNG" alt="Introduction to HTML Certificate">
+      <div class="cert-info">
+        <h3>Introduction to HTML</h3>
+        <div class="badges">
+          <span class="badge">Satr Platform</span>
+          <span class="badge ghost">Issued: Feb 2026</span>
+        </div>
+      </div>
+    </button>
+
+    <!-- CSS -->
+    <button class="cert-card"
+      data-title="Introduction to CSS"
+      data-issuer="Satr Platform"
+      data-date="Feb 2026"
+      data-img="IMAGES/IMG_css.PNG"
+      data-verify="">
+      <img src="IMAGES/IMG_css.PNG" alt="Introduction to CSS Certificate">
+      <div class="cert-info">
+        <h3>Introduction to CSS</h3>
+        <div class="badges">
+          <span class="badge">Satr Platform</span>
+          <span class="badge ghost">Issued: Feb 2026</span>
+        </div>
+      </div>
+    </button>
+
+    <!-- JavaScript -->
+    <button class="cert-card"
+      data-title="JavaScript 101"
+      data-issuer="Satr Platform"
+      data-date="Feb 2026"
+      data-img="IMAGES/IMG_javascript.PNG"
+      data-verify="">
+      <img src="IMAGES/IMG_javascript.PNG" alt="JavaScript 101 Certificate">
+      <div class="cert-info">
+        <h3>JavaScript 101</h3>
+        <div class="badges">
+          <span class="badge">Satr Platform</span>
+          <span class="badge ghost">Issued: Feb 2026</span>
+        </div>
+      </div>
+    </button>
+
+    <!-- DOM -->
+    <button class="cert-card"
+      data-title="Introduction to the DOM (Document Object Model)"
+      data-issuer="Satr Platform"
+      data-date="Feb 2026"
+      data-img="IMAGES/IMG_dom.PNG"
+      data-verify="">
+      <img src="IMAGES/IMG_dom.PNG" alt="Introduction to DOM Certificate">
+      <div class="cert-info">
+        <h3>Introduction to the DOM (Document Object Model)</h3>
+        <div class="badges">
+          <span class="badge">Satr Platform</span>
+          <span class="badge ghost">Issued: Feb 2026</span>
+        </div>
+      </div>
+    </button>
+
+    <!-- SQL (with verify) -->
+    <button class="cert-card"
+      data-title="SQL and Relational Databases 101"
+      data-issuer="Cognitive Class / IBM"
+      data-date="Nov 2025"
+      data-img="IMAGES/IMG_sql.JPG"
+      data-verify="https://courses.cognitiveclass.ai/certificates/709021ad798644eda40efcb26464664f">
+      <img src="IMAGES/IMG_sql.JPG" alt="SQL and Relational Databases 101 Certificate">
+      <div class="cert-info">
+        <h3>SQL and Relational Databases 101</h3>
+        <div class="badges">
+          <span class="badge">Cognitive Class / IBM</span>
+          <span class="badge ghost">Issued: Nov 2025</span>
+        </div>
+      </div>
+    </button>
+
+    <!-- SSCP (with verify) -->
+    <button class="cert-card"
+      data-title="(ISC)² Systems Security Certified Practitioner (SSCP) Specialization"
+      data-issuer="Coursera"
+      data-date="Sep 2025"
+      data-img="IMAGES/IMG_cys.jpg"
+      data-verify="https://www.coursera.org/account/accomplishments/specialization/096YSJPN7QIL">
+      <img src="IMAGES/IMG_cys.jpg" alt="SSCP Specialization Certificate">
+      <div class="cert-info">
+        <h3>(ISC)² SSCP Specialization</h3>
+        <div class="badges">
+          <span class="badge">Coursera</span>
+          <span class="badge ghost">Issued: Sep 2025</span>
+        </div>
+      </div>
+    </button>
+
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal" id="certModal" aria-hidden="true">
+  <div class="modal-overlay" data-close="true"></div>
+
+  <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-header">
+      <div>
+        <h3 id="modalTitle">Certificate</h3>
+        <p class="muted" id="modalMeta"></p>
+      </div>
+      <button class="icon-btn" id="closeModalBtn" aria-label="Close">✕</button>
+    </div>
+
+    <div class="modal-body">
+      <img id="modalImg" src="" alt="Certificate preview">
+    </div>
+
+    <div class="modal-footer">
+      <a class="btn" id="verifyBtn" href="#" target="_blank" rel="noopener">Verify</a>
+      <a class="btn ghost" id="downloadBtn" href="#" download>Download</a>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <h2>Languages</h2>
+  <ul>
+    <li><strong>Arabic:</strong> Native</li>
+    <li><strong>English:</strong> Fluent</li>
+  </ul>
+</div>
+<div class="card">
+    <h2>Contact</h2>
+    <p>Email: najlaalbawardi@gmail.com</p>
+    <p>Phone: +966555475051</p>
+    <p>Riyadh, Saudi Arabia</p>
+    <p>
+  <a href="https://www.linkedin.com/in/najla-khaled-03a688295"
+     target="_blank"
+     class="btn">
+     LinkedIn Profile
+  </a>
+</p>
+</div>
+<script>
+  const modal = document.getElementById("certModal");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalMeta = document.getElementById("modalMeta");
+  const modalImg = document.getElementById("modalImg");
+  const verifyBtn = document.getElementById("verifyBtn");
+  const downloadBtn = document.getElementById("downloadBtn");
+  const closeModalBtn = document.getElementById("closeModalBtn");
+
+  function openModal(data){
+    modalTitle.textContent = data.title || "Certificate";
+    modalMeta.textContent = `${data.issuer || ""}${data.date ? " • Issued: " + data.date : ""}`.trim();
+
+    modalImg.src = data.img || "";
+    modalImg.alt = (data.title || "Certificate") + " preview";
+
+    // Verify link (hide if not provided)
+    if(data.verify && data.verify.startsWith("http")){
+      verifyBtn.href = data.verify;
+      verifyBtn.style.display = "inline-block";
+    } else {
+      verifyBtn.style.display = "none";
+    }
+
+    // Download points to same image
+    downloadBtn.href = data.img || "#";
+    downloadBtn.setAttribute("download", (data.title || "certificate") + ".jpg");
+
+    modal.classList.add("show");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeModal(){
+    modal.classList.remove("show");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+    modalImg.src = "";
+  }
+
+  document.querySelectorAll(".cert-card").forEach(card => {
+    card.addEventListener("click", () => {
+      openModal({
+        title: card.dataset.title,
+        issuer: card.dataset.issuer,
+        date: card.dataset.date,
+        img: card.dataset.img,
+        verify: card.dataset.verify
+      });
+    });
+  });
+
+  // Close actions
+  closeModalBtn.addEventListener("click", closeModal);
+  modal.addEventListener("click", (e) => {
+    if(e.target.dataset.close === "true") closeModal();
+  });
+
+  // ESC to close
+  document.addEventListener("keydown", (e) => {
+    if(e.key === "Escape" && modal.classList.contains("show")) closeModal();
+  });
+</script>
+<script>
+  // --- Auto sort certificates by date (newest first) ---
+  const monthMap = {
+    Jan:1, Feb:2, Mar:3, Apr:4, May:5, Jun:6,
+    Jul:7, Aug:8, Sep:9, Oct:10, Nov:11, Dec:12
+  };
+
+  function parseMonthYear(str){
+    // expects "Feb 2026"
+    if(!str) return 0;
+    const parts = str.trim().split(/\s+/);
+    if(parts.length < 2) return 0;
+    const m = monthMap[parts[0]] || 0;
+    const y = parseInt(parts[1], 10) || 0;
+    return (y * 100) + m; // e.g., 202602
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const grid = document.querySelector(".cert-grid");
+    if(!grid) return;
+
+    const cards = Array.from(grid.querySelectorAll(".cert-card"));
+    cards.sort((a,b) => parseMonthYear(b.dataset.date) - parseMonthYear(a.dataset.date));
+    cards.forEach(c => grid.appendChild(c));
+  });
+</script>
+</div>
+</body>
+</html>
